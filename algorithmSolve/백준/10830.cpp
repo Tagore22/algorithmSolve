@@ -4,6 +4,7 @@
 using namespace std;
 
 vector<vector<int>> board;
+vector<vector<int>> def;
 const int divv = 1000;
 int n;
 long long b;
@@ -23,8 +24,8 @@ vector<vector<int>> multiCal(const vector<vector<int>>& board1, const vector<vec
 
 vector<vector<int>> FindAns(long long num)
 {
-    if (num == 1LL)
-        return board;
+    if (num == 0LL)
+        return def;
     if (num % 2 == 1LL)
         return multiCal(board, FindAns(num - 1));
     vector<vector<int>> mul = FindAns(num / 2);
@@ -39,6 +40,11 @@ int main()
 
     cin >> n >> b;
     board.assign(n, vector<int>(n, 0));
+    def.assign(n, vector<int>(n, 0));
+    for (int i = 0; i < n; ++i)
+        for (int j = 0; j < n; ++j)
+            if (i == j)
+                def[i][j] = 1;
     for (int i = 0; i < n; ++i)
         for (int j = 0; j < n; ++j)
             cin >> board[i][j];
