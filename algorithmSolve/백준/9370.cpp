@@ -5,7 +5,7 @@
 
 using namespace std; //양방향 그래프, 정점의 번호는 1번부터 n번까지, 각 간선을 갱신할 필요는 없다.
 
-vector<vector<pair<int, int>>> board;
+vector<vector<pair<int, int>>> board;//플로이드로 풀기엔 정점의 수가 너무 많다. 다익스트라로 풀 것.
 vector<int> To;
 int n, m, t, s, g, h;//s가 출발지이며 g에서 h 혹은 h에서 g는 반드시 거쳐가야한다. g와 h를 거쳤을때가 더 멀다면 해당 정점은 목적지가 아님
 const int MAXNUM = 987654321;
