@@ -4,22 +4,22 @@
 using namespace std;
 
 vector<int> ranks;
-int N, point, P;
+int N,point,P;
 
 void MakeAnswer()
 {
-    if (N == 0)
+    if(N == 0)
     {
         cout << 1 << '\n';
         return;
     }
     int idx = 0;
     int answer = 1;
-    for (int i = 0; i < ranks.size(); ++i)
+    for(int i = 0; i < ranks.size(); ++i)
     {
-        if (ranks[i] > point)
+        if(ranks[i] > point)
             ++answer;
-        else if (ranks[i] < point)
+        else if(ranks[i] < point)
             break;
         ++idx;
     }
@@ -33,7 +33,7 @@ void Input()
     cout.tie(0);
 
     cin >> N >> point >> P;
-    for (int i = 0; i < N; ++i)
+    for(int i = 0; i < N; ++i)
     {
         int x;
         cin >> x;
