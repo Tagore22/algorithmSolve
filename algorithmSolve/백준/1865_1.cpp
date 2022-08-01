@@ -3,6 +3,8 @@
 
 using namespace std;
 
+//https://www.acmicpc.net/board/view/72995 참조할것.
+
 vector<vector<pair<int, int>>> board;
 int N, M, W;
 const int MAXNUM = 987654321;
