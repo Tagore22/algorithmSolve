@@ -34,7 +34,7 @@ void Prim()
 
         check[here] = true;
         answer += cost;
-        max_cost = max(max_cost, cost);
+        max_cost = max(max_cost, cost);//프림을 구하는데에는 전혀 필요 없으나, 마을을 나눌 간선을 찾기 위해 추가됨.
         for (int i = 0; i < board[here].size(); ++i)
         {
             int there = board[here][i].first;
