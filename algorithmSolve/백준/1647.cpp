@@ -7,6 +7,9 @@ using namespace std; //양방향 그래프, 정점은 1번부터 N번까지.
 vector<vector<pair<int, int>>> board;
 int N, M;
 
+//기존의 시간복잡도였던 V의제곱 + E로는 문제를 해결하지 못하여 우선순위 큐를 이용하는 다익스트라 형식의 프림을 구현
+//하였다. 처음 해보는건데 생각할 거리도 더 적어서 더 쉽고 빠른것 같아 매우 만족스럽다.
+
 void Prim()
 {
     priority_queue<pair<int, int>> que;
