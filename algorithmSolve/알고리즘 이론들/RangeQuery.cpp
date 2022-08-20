@@ -51,10 +51,10 @@ int RangeQuery::query(int from, int to) const
 
 int RangeQuery::update(int idx, int nodevalue, int node, int left, int right)
 {
+	if (idx < left || idx > right)  //아래 if문과 순서가 바뀌어있었음.
+		return 987654321;
 	if (left == right)
 		QV[node] = nodevalue;
-	if (idx < left || idx > right)
-		return 987654321;
 	int mid = (left + right) / 2;
 	return QV[node] = min(update(idx, nodevalue, node * 2, left, mid), update(idx, nodevalue, node * 2 + 1, mid + 1, right));
 }
