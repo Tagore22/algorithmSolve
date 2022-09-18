@@ -16,7 +16,7 @@ void CalNum(int idx)
     for (int i = 0; i < 5; ++i)
         for (int j = 1; j <= N; ++j)
             if (j != idx && board[j][i] == board[idx][i])
-                with_list[j] = 1;
+                with_list[j] = 1; //여러번 같은 반이었던 학생은 여기서 중복을 거른다.
     int now = with_list.size();
     if (now > cheif.second)
         cheif = make_pair(idx, now);
