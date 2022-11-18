@@ -12,6 +12,7 @@
 
 //p.s 고작 실버인데 오랜만에 너무 힘들었다...
 //부동소수점 연산에 주의하라는 종만님의 글귀가 자꾸 눈에 선하다..
+//빅오가 5억에 가까우나, 실제 연산은 그렇지 않은것 + if연산이 매우 간단한 것으로 인해 시간초과를 피한듯 하다.
 
 using namespace std;
 
@@ -26,7 +27,7 @@ void MakeAnswer()
         for (int j = 0; j < N; ++j)
         {
             for (int iter = 0; iter <= i * 10; ++iter)
-                if (iter * 1000 / i == board[j])
+                if (iter * 1000 / i == board[j]) //곱셈과 나눗셈의 순서가 바뀌면 안된다.
                 {
                     ++find_num;
                     break;
