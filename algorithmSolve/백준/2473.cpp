@@ -18,6 +18,9 @@ using namespace std;
 //투포인터의 연산은 두종류로 사용되는데 첫번째는 이번 문제처럼 2가지 원소를 골라서 하는 연산인데, 이것은 시작점이 맨 처음와 맨 끝이고
 //두번째는 연속된 원소들을 이용하는 연산으로 이것은 맨첫번째 원소부터 lo와 hi가 겹쳐서 시작한다. 잊지 말자.
 
+//P.S 기존에는 board와 answer 배열을 int로 잡았었다. 실제로 따로 원소값을 변경하지 않기에 상관없을것 같았는데 아래 주석부분에 세 원소를 합치는
+//부분에서 순간적으로 오버플로가 날수 있었다.
+
 long long board[5000], answer[3];
 int N;
 
@@ -33,7 +36,7 @@ void MakeAnswer()
 
         while (lo < hi)
         {
-            long long now = board[i] + board[lo] + board[hi];
+            long long now = board[i] + board[lo] + board[hi]; //여기 이부분에서 합친 부분이 순간적으로 int값을 벗어난다.
             if (abs(now) < min_num)
             {
                 answer[0] = board[i];
