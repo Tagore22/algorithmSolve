@@ -113,6 +113,9 @@ void MoveShark(int idx)
             dx = C - 1 - (dx % (C - 1));
         }
     }
+
+    // 상어의 좌표와 방향을 갱신한다.
+    // 이부분을 자꾸 잊어버렸었다.
     sharks[idx].y = dy;
     sharks[idx].x = dx;
     sharks[idx].d = dir;
