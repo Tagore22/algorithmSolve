@@ -24,6 +24,8 @@ int main()
         int num = idx / 2;
         idx -= 1;
         int answer = 1, ans = 0;
+        // 위 상술하였듯 원래는 굳이 num까지 순회할 필요가 없으나 문제에서 이 부분까지 순회함을
+        // 필요로 하고 있기에 범위 연산자가 <가 아닌 <=을 써야 한다.
         for (int i = 0; i <= num; ++i)
         {
             ++ans;
