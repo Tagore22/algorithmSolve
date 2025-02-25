@@ -15,7 +15,7 @@ using namespace std;
 
 int N;
 pair<int, int> Board[100000];
-long long Sum = 0; // 주어지는 각 마을의 사람수가 최대 10억이므로 int값을 벗어날수 있다.
+long long Sum = 0; // 주어지는 각 마을의 사람수가 최대 10억이므로 int값을 벗어날수 있음에 주의.
 
 void MakeAnswer()
 {
